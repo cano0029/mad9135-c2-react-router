@@ -1,7 +1,7 @@
 .navbar > a {
   /* default styling */
   color: white;
-  padding: 0.2rem 1 rem;
+  padding: 0.2rem 1rem;
 }
 
 .navbar > a.active {
