@@ -4,16 +4,16 @@ import './navbar.css';
 const Navbar = (props) => {
   return (
     <div className="navbar">
-      <NavLink activeClassName="active" to="/" exact>
+      <NavLink className="link" activeClassName="active" to="/" exact>
         Home
       </NavLink>
-      <NavLink activeClassName="active" to="/users">
+      <NavLink className="link" activeClassName="active" to="/users">
         Users
       </NavLink>
-      <NavLink activeClassName="active" to="/addresses">
+      <NavLink className="link" activeClassName="active" to="/addresses">
         Address
       </NavLink>
-      <NavLink activeClassName="active" to="/404">
+      <NavLink className="link" activeClassName="active" to="/404">
         Nowhere
       </NavLink>
     </div>
