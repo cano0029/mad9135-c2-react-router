@@ -1,3 +1,11 @@
+.home-container {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 8rem 4rem 0 4rem;
+}
+
 .home {
   width: 40vw;
 }
