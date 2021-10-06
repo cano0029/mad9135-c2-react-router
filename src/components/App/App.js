@@ -5,9 +5,23 @@ import Users from '../Users/Users';
 import Address from '../Address/Address';
 import Nowhere from '../Nowhere/Nowhere';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function App() {
   // TO DO: Do I need a /user/id route and a UserDetails component?
+  const [userData, setUserData] = useState([]);
+  async function fetchData() {
+    // TO DO: change url to meet assignment requirements
+    let url = 'https://randomuser.me/api/?results=20';
+    let resp = await fetch(url);
+    let data = await resp.json();
+    setUserData(data.results);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header>
@@ -16,7 +30,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/users">
-            <Users />
+            <Users userData={userData} />
           </Route>
           <Route path="/addresses">
             <Address />
