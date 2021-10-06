@@ -1,0 +1,8 @@
+.navbar > a {
+  color: white;
+  padding: 0.2rem 1 rem;
+}
+
+.navbar > a.active {
+  color: turquoise;
+}
