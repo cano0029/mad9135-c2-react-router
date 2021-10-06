@@ -14,10 +14,12 @@
   padding: 0 4rem;
 }
 
-.home {
-  margin: 10rem 0 0 5rem;
-}
-
-.home h1 {
-  font-size: 2.5rem;
+/* TO DO: put into own js? */
+/* home page css */
+.home-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 8rem 4rem 0 4rem;
 }
