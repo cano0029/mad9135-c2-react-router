@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Users = (props) => {
-  const [list, setList] = useState([]);
+  const [userList, setUserList] = useState([]);
 
   async function fetchData() {
     // TO DO: change url to meet assignment requirements
@@ -9,21 +9,29 @@ const Users = (props) => {
     let resp = await fetch(url);
     let data = await resp.json();
     console.log(data.results);
-    setList(data.results);
+    setUserList(data.results);
   }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="users">
-      <h1 onClick={fetchData}>Random Users</h1>
+      <h1>Random Users</h1>
       <p>This is the random users page</p>
-      {!list.length && <p>There are no users yet</p>}
-      {list.map((user) => (
-        <div key={user.name.last + user.cell}>
-          <p>{user.name.first + ' ' + user.name.last}</p>
-          <p>{user.email}</p>
-          <p>{user.cell}</p>
-        </div>
-      ))}
+      <div className="card-container">
+        {!userList.length && <p>There are no users yet</p>}
+        {userList.map((user) => (
+          <div key={user.name.last + user.cell} className="userCard">
+            <img src={user.picture.medium} alt="user profile" />
+            <p>{user.name.first + ' ' + user.name.last}</p>
+            <p>{user.email}</p>
+            <p>{user.cell}</p>
+            <button>See User Details</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

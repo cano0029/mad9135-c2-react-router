@@ -20,12 +20,16 @@
 
 .home button {
   font-family: Roboto Mono;
-  color: white;
   background-color: rgb(187, 0, 187);
+  color: white;
   padding: 0.5rem;
   border: white;
   border-radius: 0.2rem;
   margin: 1.2rem 0;
+}
+
+.home button:hover {
+  background-color: orangered;
 }
 
 .instructions {
