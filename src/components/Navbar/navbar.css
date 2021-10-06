@@ -14,8 +14,7 @@
   display: flex;
   align-items: center;
   max-width: 600px;
-  margin: 0 auto;
-  margin-right: 1rem;
+  float: right;
 }
 
 .navbar .link {
