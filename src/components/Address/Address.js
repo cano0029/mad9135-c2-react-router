@@ -23,12 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHeaderCell: {
     fontWeight: 'bold',
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.secondary.dark,
     color: theme.palette.getContrastText(theme.palette.primary.dark),
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary.light,
-    color: theme.palette.getContrastText(theme.palette.primary.light),
   },
   name: {
     fontWeight: 'bold',
