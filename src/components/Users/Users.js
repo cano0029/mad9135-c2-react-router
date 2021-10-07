@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
+
 const Users = ({ userData }) => {
+  console.log(userData);
   return (
     <div className="users">
       <h1>Random Users</h1>
@@ -6,12 +9,14 @@ const Users = ({ userData }) => {
       <div className="card-container">
         {userData &&
           userData.map((user) => (
-            <div key={user.name.last + user.cell} className="userCard">
+            <div key={user.cell} className="userCard">
               <img src={user.picture.medium} alt="user profile" />
               <p>{user.name.first + ' ' + user.name.last}</p>
               <p>{user.email}</p>
               <p>{user.cell}</p>
-              <button>See User Details</button>
+              <Link to={`/users/${user.cell}`}>
+                <button>See User Details</button>
+              </Link>
             </div>
           ))}
       </div>

@@ -4,12 +4,14 @@ import Home from '../Home/Home';
 import Users from '../Users/Users';
 import Address from '../Address/Address';
 import Nowhere from '../Nowhere/Nowhere';
+import UserDetails from '../UserDetails/UserDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function App() {
   // TO DO: Do I need a /user/id route and a UserDetails component?
   const [userData, setUserData] = useState([]);
+
   async function fetchData() {
     // TO DO: change url to meet assignment requirements
     let url = 'https://randomuser.me/api/?results=20';
@@ -29,8 +31,11 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route path="/users">
+          <Route path="/users" exact>
             <Users userData={userData} />
+          </Route>
+          <Route path="/users/:id">
+            <UserDetails userData={userData} />
           </Route>
           <Route path="/addresses">
             <Address />
