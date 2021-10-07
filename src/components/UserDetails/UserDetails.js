@@ -6,7 +6,6 @@ const UserDetails = ({ userData }) => {
   return (
     <div className="user-details">
       <h1>Hello Im your user - {id}</h1>
-      <p>help</p>
       <section>
         {userData
           .filter((user) => user.cell === id)
