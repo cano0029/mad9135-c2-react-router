@@ -38,7 +38,7 @@ function App() {
             <UserDetails userData={userData} />
           </Route>
           <Route path="/addresses">
-            <Address />
+            <Address userData={userData} />
           </Route>
           <Route path="/404">
             <Nowhere />
