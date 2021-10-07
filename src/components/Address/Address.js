@@ -8,6 +8,8 @@ import {
   TableHead,
   TableRow,
   Paper,
+  TablePagination,
+  // TableFooter,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +48,18 @@ const useStyles = makeStyles((theme) => ({
 const Address = ({ userData }) => {
   const classes = useStyles();
 
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
   return (
     <div className="address">
       <h1>Random Addresses</h1>
@@ -69,6 +83,7 @@ const Address = ({ userData }) => {
                   else if (a.name.last === b.name.last) return 0;
                   else return 1;
                 })
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
                   <TableRow key={user.cell}>
                     <TableCell>
@@ -79,6 +94,14 @@ const Address = ({ userData }) => {
                   </TableRow>
                 ))}
             </TableBody>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 20]}
+              count={userData.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
           </Table>
         </TableContainer>
       </div>
