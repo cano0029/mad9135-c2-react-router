@@ -1,3 +1,4 @@
+import './users.css';
 import { Link } from 'react-router-dom';
 
 const Users = ({ userData }) => {
@@ -13,7 +14,7 @@ const Users = ({ userData }) => {
               <img src={user.picture.medium} alt="user profile" />
               <p>{user.name.first + ' ' + user.name.last}</p>
               <p>{user.email}</p>
-              <p>{user.cell}</p>
+              <p>{`📞 ${user.cell}`}</p>
               <Link to={`/users/${user.cell}`}>
                 <button>See User Details</button>
               </Link>

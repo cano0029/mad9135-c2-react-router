@@ -15,7 +15,7 @@ const UserDetails = ({ userData }) => {
                 <img src={filteredUser.picture.large} alt="user profile" />
                 <p>{filteredUser.name.first + ' ' + filteredUser.name.last}</p>
                 <p>{filteredUser.email}</p>
-                <p>{`Phone number: ${filteredUser.cell}`}</p>
+                <p>{`📞 ${filteredUser.cell}`}</p>
               </div>
               <div className="user-details">
                 <h2>Other Information</h2>
