@@ -7,20 +7,14 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const Main = () => {
-  // move things from App js here?
-
-  // TO DO: Move state, fetchData, route to another main component
-  // make App only for structuring?
   const [userData, setUserData] = useState([]);
 
   function findUser(id) {
     return userData.find((user) => id === user.cell);
-    // will return an object from the single planet
+    // will return a single user object
   }
 
   async function fetchData() {
-    // TO DO: change url to meet assignment requirements
-    // TO DO: move state, fetchData, useEffect from here to another main component that has User, UserDetails, Address
     let url = 'https://randomuser.me/api/?results=20';
     let resp = await fetch(url);
     let data = await resp.json();
@@ -40,7 +34,6 @@ const Main = () => {
         <Route path="/users/:id">
           <UserDetails findUser={findUser} />
         </Route>
-
         <Route path="/addresses">
           <Address userData={userData} />
         </Route>
