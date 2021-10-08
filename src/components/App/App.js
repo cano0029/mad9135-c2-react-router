@@ -7,11 +7,17 @@ import Nowhere from '../Nowhere/Nowhere';
 import UserDetails from '../UserDetails/UserDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+// import Main from '../Main/Main';
 
 function App() {
-  // TO DO: Move state and fetchData to another main component
-  // make App only for route
+  // TO DO: Move state, fetchData, route to another main component
+  // make App only for structuring?
   const [userData, setUserData] = useState([]);
+
+  function findUser(id) {
+    return userData.find((user) => id === user.cell);
+    // will return an object from the single planet
+  }
 
   async function fetchData() {
     // TO DO: change url to meet assignment requirements
@@ -32,13 +38,15 @@ function App() {
         <Navbar />
       </header>
       <main>
+        {/* <Main /> */}
         <Switch>
           <Route path="/users" exact>
             <Users userData={userData} />
           </Route>
           <Route path="/users/:id">
-            <UserDetails userData={userData} />
+            <UserDetails findUser={findUser} />
           </Route>
+
           <Route path="/addresses">
             <Address userData={userData} />
           </Route>
