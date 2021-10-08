@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 const UserDetails = ({ userData }) => {
   const { id } = useParams();

@@ -9,11 +9,13 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function App() {
-  // TO DO: Do I need a /user/id route and a UserDetails component?
+  // TO DO: Move state and fetchData to another main component
+  // make App only for route
   const [userData, setUserData] = useState([]);
 
   async function fetchData() {
     // TO DO: change url to meet assignment requirements
+    // TO DO: move state, fetchData, useEffect from here to another main component that has User, UserDetails, Address
     let url = 'https://randomuser.me/api/?results=20';
     let resp = await fetch(url);
     let data = await resp.json();
