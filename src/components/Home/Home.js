@@ -1,11 +1,16 @@
+import ghost from './ghost.png';
 import './home.css';
 import { useState } from 'react';
-import Instructions from '../Instructions';
 
 const Home = (props) => {
-  const [image, setImage] = useState('insert image');
+  const [instructions, setInstructions] = useState('');
   function showInstructions() {
-    setImage(Instructions);
+    setInstructions(`I am your instructions I will tell you to do a lot of things! Nullam
+    eget felis eget nunc lobortis mattis aliquam faucibus. Nam at lectus
+    urna duis convallis convallis tellus id interdum. Orci nulla
+    pellentesque dignissim enim. Est lorem ipsum dolor sit amet. Commodo
+    quis imperdiet massa tincidunt nunc. Auctor augue mauris augue neque
+    gravida in fermentum et sollicitudin.`);
   }
   return (
     <main className="home-container">
@@ -19,8 +24,11 @@ const Home = (props) => {
         </p>
         <button onClick={showInstructions}>Show Instructions</button>
       </div>
+      <div className="img-container">
+        <img src={ghost} alt="ghost" />
+      </div>
       <div className="instructions">
-        <p>{image}</p>
+        <p>{instructions}</p>
       </div>
     </main>
   );
