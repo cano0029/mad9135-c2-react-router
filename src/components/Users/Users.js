@@ -1,6 +1,7 @@
 import './users.css';
 import { Link } from 'react-router-dom';
 
+// To do: add a loader
 const Users = ({ userData }) => {
   console.log(userData);
   return (

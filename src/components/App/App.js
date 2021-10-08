@@ -11,6 +11,7 @@ function App() {
       <main>
         <Main />
       </main>
+      <footer>{/* To Do: Add footer component */}</footer>
     </div>
   );
 }
