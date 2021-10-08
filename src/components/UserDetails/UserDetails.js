@@ -12,7 +12,7 @@ const UserDetails = (props) => {
   }, []);
 
   return (
-    <div className="user-details">
+    <>
       {user && (
         <section key={id} className="filteredUser-card">
           <div className="basic-info">
@@ -49,7 +49,7 @@ const UserDetails = (props) => {
               </div>
             </div>
           ))} */}
-    </div>
+    </>
   );
 };
 
