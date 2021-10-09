@@ -3,11 +3,11 @@ import './users.css';
 import { NavLink } from 'react-router-dom';
 
 // To do: add a loader
-const Users = ({ userData, findUser }) => {
+const Users = ({ userData }) => {
   return (
     <section className="users">
+      <h1>Random Users</h1>
       <div className="card-container">
-        <h1>Random Users</h1>
         {userData &&
           userData.map((user) => (
             <div key={user.cell} className="userCard">

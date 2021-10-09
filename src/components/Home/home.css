@@ -1,3 +1,8 @@
+:root {
+  --typewriterSpeed: 2s;
+  --typewriterCharacters: 7;
+}
+
 .home-container {
   display: flex;
   gap: 3.5rem;
@@ -11,6 +16,33 @@
 }
 .home h1 {
   font-size: 2.5rem;
+  position: relative;
+  width: max-content;
+}
+
+/* Typewriter effect */
+.home h1::before,
+.home h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.home h1::before {
+  background: #22262d;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.home h1::after {
+  width: 0.125em;
+  background: grey;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 700ms steps(7) infinite;
 }
 
 .home span {
@@ -65,5 +97,17 @@
   }
   100% {
     top: 33%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
   }
 }
