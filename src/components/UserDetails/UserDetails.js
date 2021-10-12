@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const UserDetails = (props) => {
   const { id } = useParams();
   let user = props.findUser(id);
-
+  console.log(user);
   return (
     <>
       {user && (

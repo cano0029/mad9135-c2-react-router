@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -72,6 +73,10 @@ const Address = ({ userData }) => {
                 <TableCell className={classes.tableHeaderCell}>
                   Address
                 </TableCell>
+                <TableCell className={classes.tableHeaderCell}>Email</TableCell>
+                <TableCell className={classes.tableHeaderCell}>
+                  Username
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -85,10 +90,16 @@ const Address = ({ userData }) => {
                 .map((user) => (
                   <TableRow key={user.cell}>
                     <TableCell>
-                      <img src={user.picture.thumbnail} alt="user profile" />
+                      <NavLink to={`/users/${user.cell}`}>
+                        <img src={user.picture.thumbnail} alt="user profile" />
+                      </NavLink>
                     </TableCell>
-                    <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
+                    <NavLink to={`/users/${user.cell}`}>
+                      <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
+                    </NavLink>
                     <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</TableCell>
+                    <TableCell>{`${user.email}`}</TableCell>
+                    <TableCell>{`${user.login.username}`}</TableCell>
                   </TableRow>
                 ))}
             </TableBody>
