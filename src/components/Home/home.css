@@ -15,7 +15,7 @@
   width: 40vw;
 }
 .home h1 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   position: relative;
   width: max-content;
 }
@@ -46,7 +46,7 @@
 }
 
 .home span {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   color: orange;
 }
 
@@ -70,34 +70,7 @@
 
 .instructions p {
   text-align: right;
-}
-
-.img-container img {
-  width: 10vw;
-}
-
-/* TO DO: animation not working in transparent png */
-.img-container {
-  transform: translateX(4rem);
-  animation: floating 10s linear infinite;
-}
-
-@keyframes floating {
-  0% {
-    top: 33%;
-  }
-  30% {
-    top: 40%;
-  }
-  50% {
-    top: 33%;
-  }
-  70% {
-    top: 25%;
-  }
-  100% {
-    top: 33%;
-  }
+  font-size: 1.4rem;
 }
 
 @keyframes typewriter {
