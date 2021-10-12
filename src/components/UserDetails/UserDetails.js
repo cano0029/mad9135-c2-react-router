@@ -3,17 +3,9 @@ import { useEffect, useState } from 'react';
 
 // To do:
 // add a loader
-// only need one useEffect /useState from parent main component?
-// Uses empty [] from props to render Child
-// do I need to pass findUser here or can I put it in parent?
 const UserDetails = (props) => {
-  console.log(props);
-  const [user, setUser] = useState(null);
   const { id } = useParams();
-
-  useEffect(() => {
-    setUser(props.findUser(id));
-  }, []);
+  let user = props.findUser(id);
 
   return (
     <>
