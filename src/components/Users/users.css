@@ -42,3 +42,7 @@
   max-width: 80px;
   border-radius: 50%;
 }
+
+.svgLoader {
+  margin: 4rem auto;
+}

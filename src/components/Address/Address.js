@@ -77,27 +77,33 @@ const Address = ({ userData }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {userData.length === 0 && <img src={loader} alt="svg loader" />}
-              {userData
-                .sort((a, b) => {
-                  if (a.name.last < b.name.last) return -1;
-                  else if (a.name.last === b.name.last) return 0;
-                  else return 1;
-                })
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((user) => (
-                  <TableRow key={user.cell} className="tableRow">
-                    <NavLink to={`/users/${user.cell}`}>
-                      <TableCell>
-                        <img src={user.picture.thumbnail} alt="user profile" />
-                      </TableCell>
-                      <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
-                    </NavLink>
-                    <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</TableCell>
-                    <TableCell>{`${user.email}`}</TableCell>
-                    <TableCell>{`${user.login.username}`}</TableCell>
-                  </TableRow>
-                ))}
+              {userData.length === 0 && (
+                <img className="svgLoader" src={loader} alt="svg loader" />
+              )}
+              {userData &&
+                userData
+                  .sort((a, b) => {
+                    if (a.name.last < b.name.last) return -1;
+                    else if (a.name.last === b.name.last) return 0;
+                    else return 1;
+                  })
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((user) => (
+                    <TableRow key={user.cell} className="tableRow">
+                      <NavLink to={`/users/${user.cell}`}>
+                        <TableCell>
+                          <img
+                            src={user.picture.thumbnail}
+                            alt="user profile"
+                          />
+                        </TableCell>
+                        <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
+                      </NavLink>
+                      <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</TableCell>
+                      <TableCell>{`${user.email}`}</TableCell>
+                      <TableCell>{`${user.login.username}`}</TableCell>
+                    </TableRow>
+                  ))}
             </TableBody>
             <TablePagination
               rowsPerPageOptions={[5, 10, 20]}
