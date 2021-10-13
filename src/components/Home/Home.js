@@ -21,9 +21,8 @@ const Home = (props) => {
           <span>howdy</span>()
         </h1>
         <p>
-          Welcome to josRandom Playground! Here, I am using the Random Generator
-          API to show you random and fake data. Read the instructions to get
-          started.
+          Welcome to josRouter! Here, I will show you random and fake user data
+          using the RandomUser API. Read the instructions to get started.
         </p>
         <button onClick={showInstructions}>Show Instructions</button>
       </div>
