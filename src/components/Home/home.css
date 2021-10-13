@@ -64,6 +64,10 @@
   background-color: orangered;
 }
 
+.home button:focus {
+  background-color: rgb(51, 57, 68);
+}
+
 .instructions {
   width: 60vw;
 }
