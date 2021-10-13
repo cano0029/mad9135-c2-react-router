@@ -1,3 +1,4 @@
+import './address.css';
 import { NavLink } from 'react-router-dom';
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,7 +49,7 @@ const Address = ({ userData }) => {
   const classes = useStyles();
 
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -62,7 +63,6 @@ const Address = ({ userData }) => {
   return (
     <div className="address">
       <h1>Random Addresses</h1>
-      <p>This is the address page</p>
       <div>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
@@ -87,7 +87,7 @@ const Address = ({ userData }) => {
                 })
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
-                  <TableRow key={user.cell}>
+                  <TableRow key={user.cell} className="tableRow">
                     <NavLink to={`/users/${user.cell}`}>
                       <TableCell>
                         <img src={user.picture.thumbnail} alt="user profile" />

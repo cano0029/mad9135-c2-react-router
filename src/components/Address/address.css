@@ -1,0 +1,7 @@
+.tableRow {
+  background-color: rgba(65, 73, 90, 0.287);
+}
+
+.tableRow:hover {
+  background-color: rgb(235, 235, 235);
+}
