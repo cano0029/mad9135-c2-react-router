@@ -43,8 +43,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// To do: add a loader
-// clean up code here..import userState normally
 const Address = ({ userData }) => {
   const classes = useStyles();
 

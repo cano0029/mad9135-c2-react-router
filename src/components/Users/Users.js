@@ -2,7 +2,6 @@ import './users.css';
 import { NavLink } from 'react-router-dom';
 import loader from '../grid.svg';
 
-// To do: add a loader
 const Users = ({ userData }) => {
   return (
     <section className="users">
@@ -21,13 +20,6 @@ const Users = ({ userData }) => {
           </div>
         ))}
       </div>
-      {/* TO DO: how to move userDetails here? */}
-      {/* <div className="user-details">
-        <p>Im a user</p>
-        <Route path="/users/:id">
-          <UserDetails findUser={findUser} />
-        </Route>
-      </div> */}
     </section>
   );
 };

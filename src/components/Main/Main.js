@@ -11,11 +11,9 @@ const Main = () => {
 
   function findUser(id) {
     return userData.find((user) => id === user.cell);
-    // will return a single user object
   }
 
   async function fetchData() {
-    // To do: seed, results, nat au,ca,nz,gb,us
     let url =
       'https://randomuser.me/api/?seed=cano0029&results=20&nat=au,ca,nz,gb,us';
     let resp = await fetch(url);

@@ -1,11 +1,9 @@
 .navbar > a {
-  /* default styling */
   color: white;
   padding: 0.2rem 1rem;
 }
 
 .navbar > a.active {
-  /* if it matches the url that has been clicked*/
   color: turquoise;
 }
 

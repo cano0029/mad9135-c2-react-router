@@ -5,7 +5,7 @@ const Home = (props) => {
   const [instructions, setInstructions] = useState('');
   function showInstructions() {
     setInstructions(
-      `I am your instructions I will tell you to do a lot of things!
+      `I am your instructions. I will tell you to do a lot of things!
       First, to see my list of randomly generated users, go the User Page. 
       While you are there, you will be able to navigate to see each user's Details
       Page. Finally, if you wish to see detailed address information of my random users, 
