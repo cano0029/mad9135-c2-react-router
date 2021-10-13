@@ -15,7 +15,9 @@ const Main = () => {
   }
 
   async function fetchData() {
-    let url = 'https://randomuser.me/api/?results=20';
+    // To do: seed, results, nat au,ca,nz,gb,us
+    let url =
+      'https://randomuser.me/api/?seed=cano0029&results=20&nat=au,ca,nz,gb,us';
     let resp = await fetch(url);
     let data = await resp.json();
     setUserData(data.results);
