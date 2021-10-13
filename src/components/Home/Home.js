@@ -7,11 +7,10 @@ const Home = (props) => {
     setInstructions(
       `I am your instructions. I will tell you to do a lot of things!
       First, to see my list of randomly generated users, go the User Page. 
-      While you are there, you will be able to navigate to see each user's Details
-      Page. Finally, if you wish to see detailed address information of my random users, 
-      simply navigate to the Address Page. There, you can also navigate to a user's 
-      Details Page by clicking on their profile picture or name. I hope that wasn't too 
-      confusing... ENJOY! 
+      While you are there, you will be able to navigate to see a clicked user's Details
+      Page. Finally, if you wish to see random addresses, simply navigate to the Address Page. 
+      There, you can also navigate to a user's Details Page by clicking on their profile picture or name. 
+      I hope that wasn't too confusing... ENJOY! 
       `
     );
   }
