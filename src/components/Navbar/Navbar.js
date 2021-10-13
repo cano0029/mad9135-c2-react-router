@@ -13,9 +13,6 @@ const Navbar = (props) => {
       <NavLink className="link" activeClassName="active" to="/addresses">
         Address
       </NavLink>
-      <NavLink className="link" activeClassName="active" to="/404">
-        Nowhere
-      </NavLink>
     </div>
   );
 };
