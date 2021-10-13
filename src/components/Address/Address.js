@@ -1,5 +1,6 @@
 import './address.css';
 import { NavLink } from 'react-router-dom';
+import loader from '../grid.svg';
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -76,6 +77,7 @@ const Address = ({ userData }) => {
               </TableRow>
             </TableHead>
             <TableBody>
+              {userData.length === 0 && <img src={loader} alt="svg loader" />}
               {userData
                 .sort((a, b) => {
                   if (a.name.last < b.name.last) return -1;
