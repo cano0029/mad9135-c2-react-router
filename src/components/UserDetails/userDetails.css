@@ -1,0 +1,8 @@
+.filteredUser-card {
+  background-color: rgb(45, 54, 74);
+  padding: 3rem;
+  width: 60vw;
+  display: flex;
+  margin: 6rem auto;
+  gap: 4rem;
+}
