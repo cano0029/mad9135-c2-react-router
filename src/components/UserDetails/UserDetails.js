@@ -16,9 +16,9 @@ const UserDetails = ({ findUser }) => {
             <p>{`📞 ${user.cell}`}</p>
           </div>
           <div className="user-details">
-            <h2>Other Information</h2>
+            <h2>User Details</h2>
             <p>{`Address: ${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</p>
-            <p>{`UUID: ${user.login.uuid}`}</p>
+            <p>{`Age: ${user.dob.age} years old`}</p>
             <p>{`Username: ${user.login.username}`}</p>
             <p>{`Password: ${user.login.password}`}</p>
           </div>
