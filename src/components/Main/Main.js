@@ -6,7 +6,7 @@ import UserDetails from '../UserDetails/UserDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const Main = () => {
+const Main = (props) => {
   const [userData, setUserData] = useState([]);
 
   function findUser(id) {

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import './userDetails.css';
 
-const UserDetails = (props) => {
+const UserDetails = ({ findUser }) => {
   const { id } = useParams();
-  let user = props.findUser(id);
+  let user = findUser(id);
   console.log(user);
   return (
     <>
