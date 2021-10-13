@@ -68,11 +68,13 @@ const Address = ({ userData }) => {
               <TableRow>
                 <TableCell className={classes.tableHeaderCell}>Name</TableCell>
                 <TableCell className={classes.tableHeaderCell}>
-                  Address
+                  Street Address
                 </TableCell>
-                <TableCell className={classes.tableHeaderCell}>Email</TableCell>
                 <TableCell className={classes.tableHeaderCell}>
-                  Username
+                  Country
+                </TableCell>
+                <TableCell className={classes.tableHeaderCell}>
+                  Postal Code
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -99,9 +101,9 @@ const Address = ({ userData }) => {
                         </TableCell>
                         <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
                       </NavLink>
-                      <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</TableCell>
-                      <TableCell>{`${user.email}`}</TableCell>
-                      <TableCell>{`${user.login.username}`}</TableCell>
+                      <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}`}</TableCell>
+                      <TableCell>{user.location.country}</TableCell>
+                      <TableCell>{user.location.postcode}</TableCell>
                     </TableRow>
                   ))}
             </TableBody>
