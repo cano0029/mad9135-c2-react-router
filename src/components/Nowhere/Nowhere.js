@@ -1,6 +1,8 @@
+import './nowhere.css';
+
 const Nowhere = (props) => {
   return (
-    <div className="404">
+    <div className="notFound">
       <h1>404</h1>
       <p>Oopsy daisies. Something went wrong</p>
     </div>
