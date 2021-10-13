@@ -11,7 +11,6 @@ import {
   TableRow,
   Paper,
   TablePagination,
-  // TableFooter,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
