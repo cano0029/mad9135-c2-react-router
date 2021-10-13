@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHeaderCell: {
     fontWeight: 'bold',
-    backgroundColor: theme.palette.secondary.dark,
+    backgroundColor: '#2d3549',
     color: theme.palette.getContrastText(theme.palette.primary.dark),
   },
   name: {
@@ -68,7 +68,6 @@ const Address = ({ userData }) => {
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell className={classes.tableHeaderCell}>Image</TableCell>
                 <TableCell className={classes.tableHeaderCell}>Name</TableCell>
                 <TableCell className={classes.tableHeaderCell}>
                   Address
@@ -89,12 +88,10 @@ const Address = ({ userData }) => {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
                   <TableRow key={user.cell}>
-                    <TableCell>
-                      <NavLink to={`/users/${user.cell}`}>
-                        <img src={user.picture.thumbnail} alt="user profile" />
-                      </NavLink>
-                    </TableCell>
                     <NavLink to={`/users/${user.cell}`}>
+                      <TableCell>
+                        <img src={user.picture.thumbnail} alt="user profile" />
+                      </TableCell>
                       <TableCell>{`${user.name.first} ${user.name.last}`}</TableCell>
                     </NavLink>
                     <TableCell>{`${user.location.street.name}, ${user.location.city}, ${user.location.state}, ${user.location.country}, ${user.location.postcode}`}</TableCell>
