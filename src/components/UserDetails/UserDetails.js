@@ -4,7 +4,6 @@ import './userDetails.css';
 const UserDetails = ({ findUser }) => {
   const { id } = useParams();
   let user = findUser(id);
-  console.log(user);
   return (
     <>
       {user && (
