@@ -29,7 +29,7 @@ const Main = (props) => {
     <>
       <Switch>
         <Route path="/users" exact>
-          <Users userData={userData} findUser={findUser} />
+          <Users userData={userData} />
         </Route>
         <Route path="/users/:id">
           <UserDetails findUser={findUser} />
